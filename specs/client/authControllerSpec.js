@@ -1,4 +1,4 @@
-/*describe('AuthController', function () {
+describe('AuthController', function () {
   var $scope, $rootScope, $location, $window, $httpBackend, createController, Auth;
 
   // using angular mocks, we can inject the injector
@@ -62,4 +62,4 @@
     $httpBackend.flush();
     expect($window.localStorage.getItem('com.shortly')).to.be(token);
   });
-}); */
+});
