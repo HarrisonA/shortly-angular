@@ -1,4 +1,4 @@
-describe('Routing', function () {
+/*describe('Routing', function () {
   var $route;
   beforeEach(module('shortly'));
 
@@ -30,3 +30,4 @@ describe('Routing', function () {
     expect($route.routes['/shorten'].templateUrl).to.be('app/shorten/shorten.html');
   });
 });
+*/
