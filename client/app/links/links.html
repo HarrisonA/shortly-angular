@@ -4,7 +4,9 @@
   <div ng-controller = 'LinksController'>
     <img src='/redirect_icon.png'/>
   <ul>
-    <li ng-repeat = "link in data.links | orderBy: '-visits'">
+  <label>Search: <input ng-model="searchText"></label>  <!-- will filter the links by the serach text-->
+
+    <li ng-repeat = "link in data.links | orderBy: '-visits'  | filter:searchText">
       <div class='info'>
       <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
       <div class='title'>{{link.title}}</div>
