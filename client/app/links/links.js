@@ -1,3 +1,11 @@
+//1. get links from user's get request
+//2. list those links from $scope.data
+//3. render links in list on links.html
+//? store links to database
+
+
+
+
 var links = angular.module('shortly.links', []);
 
 links.controller('LinksController', ['$scope', 'Links', function($scope, Links){
@@ -33,12 +41,16 @@ links.controller('LinksController', ['$scope', 'Links', function($scope, Links){
   //       // or server returns response with an error status.
   //     });
   // };
-  console.log("\n\n\nour links instantiation: ", Links, "\n\n");
+  //console.log("\n\n\nour links instantiation: ", Links, "\n\n");
   // $scope.init();
   
   $scope.getLinks = function(){
     Links.getLinks().then(function (dataPassedFromFactory){
       $scope.data.links = dataPassedFromFactory;
+      console.log("\n\n\none of the links objects: ", dataPassedFromFactory[0]);
+      console.log($scope.data.links);
+
+
     });
   }
 
@@ -53,7 +65,7 @@ links.controller('LinksController', ['$scope', 'Links', function($scope, Links){
         // or server returns response with an error status.
       // });
 
-  console.log("\n\n contents of $scope.data: ", $scope.data);
+  //console.log("\n\n contents of $scope.data: ", $scope.data);
 
   // $scope.saveLinks = function(){
   //   for (var i=0; i<Links.linkStorage.length; i++){

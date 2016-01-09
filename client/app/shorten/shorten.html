@@ -1,6 +1,21 @@
 <div id='container' ng-app="shortly.shorten">
 <!-- Your code here -->
   <div ng-controller="ShortenController">
+    <div class='navigation'>
+    <ul>
+      <li><a href='#' class='index'>All Links</a></li>
+      <li><a href='/#/shorten' class='create'>Shorten</a></li>
+      <li><a href='/logout' class='logout'>Logout</a></li>
+    </ul>
+    </div>
+     <form ng-submit='addLink({url:url.text})'>
+      <input class='text' type='url' name='url' ng-model="url.text">
+      <input type='submit' value='SHORTEN!'>
+      
+    </form>
+    <img class='spinner' src='/spiffygif_46x46.gif'>
+    <div class='message'></div>
+    <h1>{{ url.text }}</h1>
   </div>
 </div>
 

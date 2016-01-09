@@ -5,12 +5,12 @@ angular.module('shortly.services', [])
   var linkStorage = [];
 
   var getLinks = function (data){
-    console.log('\n\n\nGET LINKS HAS BEEN CALLED\n\n\n');
+    //console.log('\n\n\nGET LINKS HAS BEEN CALLED\n\n\n');
     return $http({
       method: 'GET',
       url: '/api/links'
     }).then(function (response){
-      console.log("\n\n\n\n\nSOLASOLASOLA", response.data);
+      console.log("\n\n\n\n\nSOLASOLASOLA", response);
       return response.data
         // this callback will be called asynchronously
         // when the response is available
@@ -19,10 +19,13 @@ angular.module('shortly.services', [])
 
   };
 
-  var addLink = function(){
+  var addLink = function(urlInput){
+    console.log('ADD LINK WAS CALLED');
+    // $http.post('/api/links', urlInput)
     return $http({
       method: 'POST', 
-      url: '/api/links'
+      url: '/api/links',
+      data: urlInput
     }).then(function(response){
       return response;
     })
